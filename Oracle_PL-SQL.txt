@@ -1,0 +1,27 @@
+Example 1:
+Declare
+a number:=10;
+b number:=20;
+c number;
+begin
+c:=a+b;
+dbms_output.put_line('The result is '||c);
+end;
+
+Output-The result is 30
+--------------------------------------------------
+Example 2:
+create or replace function addno(i number,j number) return number is
+begin
+return i+j;
+end;                 //first run this
+......................................
+declare
+k number;
+begin
+k:=addno(35,45);
+dbms_output.put_line('The sum is '||k); //then run this
+end;
+
+Output-The sum is 80
+---------------------------------------
