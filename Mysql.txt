@@ -1,0 +1,25 @@
+MySql
+-----------------
+To see the databases present
+1)show databases;
+-------------------------------------------
+To create database
+2)create database marlabs
+---------------------------------------------------
+To go into the database
+3)use marlabs;
+----------------------------------------------------
+To delete the database
+4)drop database marlabs;
+-----------------------------------------------------
+To create a table in the database
+5)create table student(studid int,name varchar(30),address varchar(30));
+-------------------------------------------------------------------------
+To insert the row into the table
+6)insert into student values(102,'Trupti','Bangalore');
+-----------------------------------------------------------------------------------
+To update the data 
+7)update student set address='Orissa' where studid=102;
+--------------------------------------------------------------------------------------
+To delete the data
+8)delete from student where studid=101;

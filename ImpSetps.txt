@@ -1,0 +1,21 @@
+1)HOW TO  ADD APACHE TOMCAT SERVER
+--> windows--perferences--server--runtime--add--browse the tomcat from location -- applay-close.
+
+2)HOW TO CHANGE THE PORT NUMBER
+-->window--showview--other--server--servers--open--double click on tomcat--change port number.
+
+3)REMOVE EXTRA SERVER
+-->window--perferences--server--runtime environment--remove--applay and close.
+
+4)CHANGE JRE 1.5 TO 1.8
+-->properties--libraries--add--extral jar or edit/remove.
+
+5)SELECT JRE OR JDK
+-->window-perferences--java--install JREs --add --next--direstor--localdisk c--program files-java-jdk1.8--finish--apply and close.
+
+6)CREATE NEW WEB PROJECT
+-->new--project--web--dynamic web project--next--project name--target runtime(apache 9.0)--next--tomacat directory--location of tomcat--finish--next--generate web.xml--finish.
+
+-->webcontent/web app--new --html file/othe--file--filename--next--finish.
+
+-->java resources--src--rightclick on src--class name--next--finish.

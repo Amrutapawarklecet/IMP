@@ -1,0 +1,4 @@
+1)alt+V+z --->change front size
+2)ctrl+left,ctrl+right,clrt+up,ctrl+down ---> left,right,up,down
+3)shift+F11 --->insert new sheet
+4)alt+space+R --->minimize the window ,alt+space+X --->maximize the window
