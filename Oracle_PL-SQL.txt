@@ -25,3 +25,17 @@ end;
 
 Output-The sum is 80
 ---------------------------------------
+Example 3:
+create or replace function addno(i IN number,j IN number) return number is
+ k number;
+ begin
+ k:=i+j; 
+return k; 
+end;
+.....................
+declare
+k number;
+begin
+k:=addno(35,45);
+dbms_output.put_line('The sum is '||k); //then run this
+end;

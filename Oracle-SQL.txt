@@ -41,4 +41,26 @@ update marlabsstud set phoneno='6543435' where empno=102;
 how to drop the column
 ---------------------------
 alter table marlabsstud drop column phoneno;
+-------------------------------------------------------
+
+Create a Table :-
+-----------------------
+In oracle we have 5 contrains.
+1)primary key:- if we declare a column as primary key we cannot enter a duplicate value and also we cannot keep it null.
+
+2)unique key :- if we declare a column as unique key we cannot enter duplicate value.
+
+3)not null:- if we declare a column as not null we cannot keep the column empty.
+
+4)check :- if we declare a column as check we can restrict the data .
+example:- salary should be greater than 15000.Marks should be greater than 0.
+
+5)Foreign key:- it is to refer another table.
+----------------------------------------------------------------------------------------
+
+number(9,2) :- 9999999.99
 ----------------------------------------------------------------------------------------------------------------------------
+rollback;
+commit;
+
+rollback;
