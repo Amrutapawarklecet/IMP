@@ -33,4 +33,24 @@ commit:-save the data
 
 select *from marlabsstud;
 insert into marlabsstud values(105,'samidha','Bangalore');
+-----------------------------------------------------------------------------------
+ResultSet :- It is a memory block which can store the entire table.
+We have a method next() which will move the cursor in forward direction .Then we can print the rows of the table.
+It is use to display the data of a table.
 
+We have TYPE_SCROLL_INSENSITIVE  and TYPE_SCROLL_SENSITIVE add with the statement parameters which help in moving the cursor in forward and backward direction.
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+    when we use Createstatement, when we use preparestatement??
+Createstatement :- static statement
+ preparestatement :- dynamic statement
+----------------------------------------------------------------------
+    when we use jsp file and when we use GUI
+servlet,JSP,spring boot,spring MVC
+
+------------------------------------------------------------------------------------------
+servlet and Jsp
+servlet is faster than JSP.
+JSP internally is converted to servlet.
+The code is less in JSP compared to servlet.
+Servlet are java files.where as JSP are webbased file.
+------------------------------------------------------------------------------------------
