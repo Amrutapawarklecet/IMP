@@ -1190,3 +1190,151 @@ import { Component } from '@angular/core';
   `
   
 })
+export class PipeDemoComponent {
+}
+----------------------------------------------------------------------------
+npm uninstall -g @angular-cli
+npm install -g @angular/cli@latest
+-------------------------------------------------------------------------
+http://localhost:8090/swagger-ui.html
+----------------------------------------------------------
+swagger
+-----------------
+package sandip.swagger.config;
+
+import java.util.Collections;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
+
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+@Profile({"default","qa"})
+@Configuration
+@EnableSwagger2
+public class SwaggerConfig {
+
+	@Bean
+	public Docket createDocket() {
+		return new Docket(DocumentationType.SWAGGER_2)
+				.select()
+				.apis(RequestHandlerSelectors.basePackage("sandip"))
+				.paths(PathSelectors.ant("/rest/**"))
+				.build()
+				.apiInfo(apiInfo())
+				;
+	}
+
+	private ApiInfo apiInfo() {
+		return new ApiInfo(
+				"EMPLOYEE APP BY SANDIP MOHAPATRA", 
+				"SAMPLE", 
+				"3.2GA", 
+				"http://simoninfotech.com", 
+				new Contact("SANDIP MOHAPATRA", "http://simoninfotech.com", "sandipmohapatra123@gmail.com"), 
+				"7760213015", "http://simoninfotech.com",
+				Collections.emptyList());
+	}
+}
+-------------------------------------------------
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+--------------------------------------------------------------------------------------------
+spring+angular
+--------------3 modules-------------------
+1)student-all:- It will display the list of students.It has 2 buttons :-delete and edit.
+2)student create:- we can insert data into the database.
+3)student-edit:-The button is there in student all.to edit the student.
+-------------------------------------------------
+4)app.component.ts:- In this we have selector:"app-root",
+5)student.service.ts:-we have http service for intraction with spring rest.we have 5 methods in it.
+i)getAllStudents()
+ii)deleteOneStudent(id:number)
+iii)createStudent(student:Student)
+iv) getOneStudent(id: number)
+v)updateStudent(id: number, student: Student)
+
+6) private basePath = 'http://localhost:8090/rest/student';    <---In Angular service.
+7)@CrossOrigin(origins = "http://localhost:4200")      <---In springboot controller.
+
+Angular is having endPoint URL of springBoot and springBoot is having URL of angular.
+
+8)Observable :- It is a stream of event or data.
+
+basePath='http://localhost:8090/rest/student';
+
+ return this.http.get<Student[]>(`${this.http://localhost:8090/rest/student/all}`);
+
+we have 5 endPoint URL:-
+--------------------------------------------------------------------------
+1)http://localhost:8090/rest/student/all
+2)http://localhost:8090/rest/student/remove/${id}
+3)http://localhost:8090/rest/student/save
+4)http://localhost:8090/rest/student/one/${id}
+5)http://localhost:8090/rest/student/modify/${id}
+--------------------------------------------------------------------------------------------
+These Urls will interact with spring Controller and return some data.
+These data will be displayed when called in 
+i)student-all.ts
+ii)student-create.ts
+iii)student-edit.ts
+---------------------------------------------------------
+for publishing the data we use subscribe.which will print the data which is a return from student.service.ts
+-------------------------------------------------------------------------------------------------------------
+springBoot
+-----------------------
+1)main
+2)controller
+3)model ---Student.java
+4)repo:-public interface StudentRepository extends JpaRepository<Student, Integer>
+
+predefined methods in JpaRepository/CrudRepository:-
+----------------------------------------------------------------------
+save: Pass an Entity Bean or a subclass to Entity Bean and it will be persisted. The persisted entity will be returned. Any auto-generated field or default fields will be initialised and returned with the entity.
+
+saveAll: Pass an iterable of the Entities and will be saved.
+
+findById: Pass the ID field and the matching entity will be returned. It returns an Entity wrapped in an Optional object.
+
+existsById: Checks if the given ID exists into the table and returns boolean.
+
+findAll: This method returns all the entities from table.
+
+findAllById: Returns iterable of all the entities that match the given ID.
+
+count: The count of entities.
+
+deleteById: Find an entity by given ID and delete.
+
+delete: Find an entity matching to the given entity and delete.
+
+deleteAll: If given an iterable of entities all those entities are removed. If called without any argument, all the entities are deleted.
+--------------------------------------------------------------------------------------------------
+5)service has some methods:-(Interface)
+-----------------------------------------------------
+Integer saveStudent(Student s);
+void updateStudent(Student s);
+void deleteStudent(Integer id);
+Optional<Student> getOneStudent(Integer id);
+List<Student> getAllStudents();
+boolean isStudentExist(Integer id);
+------------------------------------------------------------------
+6)serviceImplement :- it conatins body of the service.
+------------------------------------------
+7)swagger :- It is a testing tool.
